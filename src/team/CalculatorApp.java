@@ -37,8 +37,8 @@ public class CalculatorApp extends JFrame {
         add(buttonPanel, BorderLayout.CENTER);
         setLocationRelativeTo(null);
     }
-
-    public class AdditionFrame extends JFrame {
+  
+class AdditionFrame extends JFrame {
     public AdditionFrame() {
         setTitle("Addition");
         JPanel panel = new JPanel(new GridBagLayout());
@@ -111,75 +111,144 @@ public class CalculatorApp extends JFrame {
     }
 }
 
-    public class MultiplicationFrame extends JFrame {
-        public MultiplicationFrame() {
-            setTitle("Multiplication");
-            JPanel panel = new JPanel(new GridBagLayout());
-            GridBagConstraints gbc = new GridBagConstraints();
-            gbc.insets = new Insets(5, 5, 5, 5);
-
-            JLabel label1 = new JLabel("Số 1:");
-            gbc.gridx = 0;
-            gbc.gridy = 0;
-            gbc.anchor = GridBagConstraints.EAST;
-            panel.add(label1, gbc);
-
-            JTextField input1 = new JTextField(10);
-            gbc.gridx = 1;
-            gbc.gridy = 0;
-            gbc.anchor = GridBagConstraints.WEST;
-            panel.add(input1, gbc);
-
-            JLabel label2 = new JLabel("Số 2:");
-            gbc.gridx = 0;
-            gbc.gridy = 1;
-            gbc.anchor = GridBagConstraints.EAST;
-            panel.add(label2, gbc);
-
-            JTextField input2 = new JTextField(10);
-            gbc.gridx = 1;
-            gbc.gridy = 1;
-            gbc.anchor = GridBagConstraints.WEST;
-            panel.add(input2, gbc);
-
-            JButton calcButton = new JButton("Tính Tích (×)");
-            gbc.gridx = 0;
-            gbc.gridy = 2;
-            gbc.gridwidth = 2;
-            gbc.anchor = GridBagConstraints.CENTER;
-            panel.add(calcButton, gbc);
-
-            JLabel resultLabel = new JLabel("Kết quả:");
-            gbc.gridx = 0;
-            gbc.gridy = 3;
-            gbc.gridwidth = 1;
-            gbc.anchor = GridBagConstraints.EAST;
-            panel.add(resultLabel, gbc);
-
-            JTextField resultField = new JTextField(10);
-            resultField.setEditable(false);
-            gbc.gridx = 1;
-            gbc.gridy = 3;
-            gbc.anchor = GridBagConstraints.WEST;
-            panel.add(resultField, gbc);
-
-            calcButton.addActionListener(e -> {
-                try {
-                    double num1 = Double.parseDouble(input1.getText().trim());
-                    double num2 = Double.parseDouble(input2.getText().trim());
-                    resultField.setText(String.valueOf(num1 * num2));
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
-                }
-            });
-
-            add(panel);
-            pack();
-            setLocationRelativeTo(null);
-        }
+class MultiplicationFrame extends JFrame {
+    public MultiplicationFrame() {
+        setTitle("Multiplication");
+        JPanel panel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5, 5, 5, 5);
+        
+        JLabel label1 = new JLabel("Số 1:");
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.EAST;
+        panel.add(label1, gbc);
+        
+        JTextField input1 = new JTextField(10);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        panel.add(input1, gbc);
+        
+        JLabel label2 = new JLabel("Số 2:");
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        panel.add(label2, gbc);
+        
+        JTextField input2 = new JTextField(10);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.anchor = GridBagConstraints.WEST;
+        panel.add(input2, gbc);
+        
+        JButton calcButton = new JButton("Tính Tích (×)");
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.gridwidth = 2;
+        gbc.anchor = GridBagConstraints.CENTER;
+        panel.add(calcButton, gbc);
+        
+        JLabel resultLabel = new JLabel("Kết quả:");
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        panel.add(resultLabel, gbc);
+        
+        JTextField resultField = new JTextField(10);
+        resultField.setEditable(false);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.anchor = GridBagConstraints.WEST;
+        panel.add(resultField, gbc);
+        
+        calcButton.addActionListener(e -> {
+            try {
+                double num1 = Double.parseDouble(input1.getText().trim());
+                double num2 = Double.parseDouble(input2.getText().trim());
+                resultField.setText(String.valueOf(num1 * num2));
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        
+        add(panel);
+        pack();
+        setLocationRelativeTo(null);
     }
-      public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new CalculatorApp().setVisible(true));
+}
+
+class DivisionFrame extends JFrame {
+    public DivisionFrame() {
+        setTitle("Division");
+        JPanel panel = new JPanel(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(5, 5, 5, 5);
+        
+        JLabel label1 = new JLabel("Số 1:");
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.EAST;
+        panel.add(label1, gbc);
+        
+        JTextField input1 = new JTextField(10);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.WEST;
+        panel.add(input1, gbc);
+        
+        JLabel label2 = new JLabel("Số 2:");
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        panel.add(label2, gbc);
+        
+        JTextField input2 = new JTextField(10);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.anchor = GridBagConstraints.WEST;
+        panel.add(input2, gbc);
+        
+        JButton calcButton = new JButton("Tính Thương (÷)");
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        gbc.gridwidth = 2;
+        gbc.anchor = GridBagConstraints.CENTER;
+        panel.add(calcButton, gbc);
+        
+        JLabel resultLabel = new JLabel("Kết quả:");
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 1;
+        gbc.anchor = GridBagConstraints.EAST;
+        panel.add(resultLabel, gbc);
+        
+        JTextField resultField = new JTextField(10);
+        resultField.setEditable(false);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.anchor = GridBagConstraints.WEST;
+        panel.add(resultField, gbc);
+        
+        calcButton.addActionListener(e -> {
+            try {
+                double num1 = Double.parseDouble(input1.getText().trim());
+                double num2 = Double.parseDouble(input2.getText().trim());
+                if (num2 == 0) {
+                    throw new ArithmeticException("Division by zero");
+                }
+                resultField.setText(String.valueOf(num1 / num2));
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            } catch (ArithmeticException ex) {
+                JOptionPane.showMessageDialog(this, "Không được chia cho 0!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        
+        add(panel);
+        pack();
+        setLocationRelativeTo(null);
     }
 
 }
