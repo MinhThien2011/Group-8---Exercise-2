@@ -110,7 +110,6 @@ public class CalculatorApp extends JFrame {
         setLocationRelativeTo(null);
     }
 }
-
     
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new CalculatorApp().setVisible(true));
