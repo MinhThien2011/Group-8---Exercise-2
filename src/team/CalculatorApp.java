@@ -109,6 +109,10 @@ public class CalculatorApp extends JFrame {
         pack();
         setLocationRelativeTo(null);
     }
+    void in() {
+    	System.out.print("Update Check-in");
+    }
+    
 }
     
     public static void main(String[] args) {
