@@ -329,7 +329,7 @@ class SubtractionFrame extends JFrame {
         setLocationRelativeTo(null);
     }
     void in(){
-        System.out.print("Update code");
+        System.out.print("Check-in code");
     }
 
 }
